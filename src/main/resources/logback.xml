@@ -1,0 +1,13 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- Other appender configuration -->
+        <encoder>
+            <pattern>%highlight(%-5level) %green(%d{HH:mm:ss.SSS}) %magenta([%thread]) %highlight(%logger{36}) - %msg%n</pattern>
+            <timezone>UTC</timezone> <!-- Set the timezone to UTC -->
+            <outputPatternAsHeader>true</outputPatternAsHeader>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>

@@ -1,0 +1,10 @@
+foobar:
+  document:
+    application-document-service:
+      batch-size: 5000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

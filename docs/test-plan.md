@@ -1,0 +1,9 @@
+# Test Plan
+
+| Test case                                                        | Description                                                                                                                                                                       | Type of test       |
+|:-----------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|
+| No article contains the company name                             | Given a query is submitted, when there are no articles containing one of the company names which were loaded, the output should be an empty collection                            | Spring Integration | 
+| Searching should be case insensitive                             | Given a query is submitted, when the input is processed by Lucene, the result will be the same regardless of characters case                                                      | Spring Integration | 
+| Words are found inside and outside CDATA tags                    | Given an array of documents is sent, data will be retrieved correctly regardless whether it contains CDATA tags or not.                                                           | Spring Integration |
+| Sentences are indexed correctly inside and outside of CDATA tags | Given an array of documents is sent, data will be parsed and stored correctly regardless whether it contains CDATA tags or not. Be aware that nested CDATA tags are not supported | Spring Integration |                  |
+| Only entire words are counted as a hit                           | Given a query is submitted, only texts containing entire words being matched will concur to the results                                                                           | Spring Integration |
