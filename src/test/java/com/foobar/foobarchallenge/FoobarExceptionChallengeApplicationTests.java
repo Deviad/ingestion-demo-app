@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.TestSocketUtils;
 
-class FoobarChallengeApplicationTests {
+class FoobarExceptionChallengeApplicationTests {
 
   @Test
   void contextLoads() {

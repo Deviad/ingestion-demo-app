@@ -1,8 +1,8 @@
 package com.foobar.foobarchallenge.port;
 
-import static com.foobar.foobarchallenge.domain.Foobar.ErrorCode.CANNOT_LOAD_COMPANY_FILE;
+import static com.foobar.foobarchallenge.domain.FoobarException.ErrorCode.CANNOT_LOAD_COMPANY_FILE;
 
-import com.foobar.foobarchallenge.domain.Foobar;
+import com.foobar.foobarchallenge.domain.FoobarException;
 import io.vavr.control.Either;
 import io.vavr.control.Try;
 import java.io.InputStream;
@@ -32,7 +32,7 @@ public class CustomResourceLoader {
           "Exception in CompanyIndexerService:getResource with message: {}, {}",
           resourceEither.getLeft().getMessage(),
           List.of(resourceEither.getLeft().getStackTrace()));
-      throw new Foobar(CANNOT_LOAD_COMPANY_FILE, resourceEither.getLeft().getMessage());
+      throw new FoobarException(CANNOT_LOAD_COMPANY_FILE, resourceEither.getLeft().getMessage());
     }
     return resourceEither.swap().getLeft();
   }

@@ -1,6 +1,6 @@
 package com.foobar.foobarchallenge.domain;
 
-  public class Foobar extends RuntimeException {
+  public class FoobarException extends RuntimeException {
     public enum ErrorCode {
       GENERAL,
       CANNOT_LOAD_ARTICLE_FILE,
@@ -12,33 +12,33 @@ package com.foobar.foobarchallenge.domain;
     private final ErrorCode errorCode;
     private final String[] parameters;
 
-    public Foobar(String message) {
+    public FoobarException(String message) {
       this(message, ErrorCode.GENERAL);
     }
 
-    public Foobar(Throwable cause) {
+    public FoobarException(Throwable cause) {
       this(cause, ErrorCode.GENERAL);
     }
 
-    public Foobar(ErrorCode errorCode, String... parameters) {
+    public FoobarException(ErrorCode errorCode, String... parameters) {
       this.errorCode = errorCode;
       this.parameters = parameters;
     }
 
-    public Foobar(String message, ErrorCode errorCode, String... parameters) {
+    public FoobarException(String message, ErrorCode errorCode, String... parameters) {
       super(message);
       this.errorCode = errorCode;
       this.parameters = parameters;
     }
 
-    public Foobar(
+    public FoobarException(
         String message, Throwable cause, ErrorCode errorCode, String... parameters) {
       super(message, cause);
       this.errorCode = errorCode;
       this.parameters = parameters;
     }
 
-    public Foobar(Throwable cause, ErrorCode errorCode, String... parameters) {
+    public FoobarException(Throwable cause, ErrorCode errorCode, String... parameters) {
       super(cause);
       this.errorCode = errorCode;
       this.parameters = parameters;

@@ -1,9 +1,9 @@
 package com.foobar.foobarchallenge.application.service;
 
-import static com.foobar.foobarchallenge.domain.Foobar.ErrorCode.CANNOT_LOAD_ARTICLE_FILE;
+import static com.foobar.foobarchallenge.domain.FoobarException.ErrorCode.CANNOT_LOAD_ARTICLE_FILE;
 
 import com.foobar.foobarchallenge.common.ApplicationService;
-import com.foobar.foobarchallenge.domain.Foobar;
+import com.foobar.foobarchallenge.domain.FoobarException;
 import com.foobar.foobarchallenge.domain.model.DocumentSchema;
 import com.foobar.foobarchallenge.domain.model.ID;
 import com.foobar.foobarchallenge.domain.repo.CompanyRepository;
@@ -90,7 +90,7 @@ public class ApplicationDocumentServiceImpl implements ApplicationDocumentServic
 
   private File getFile(Resource x) {
     return Try.of(x::getFile)
-        .getOrElseThrow(e -> new Foobar(CANNOT_LOAD_ARTICLE_FILE, e.getMessage()));
+        .getOrElseThrow(e -> new FoobarException(CANNOT_LOAD_ARTICLE_FILE, e.getMessage()));
   }
 
   private CompletableFuture<Optional<DocumentSchema>> processInputFile(File r) {
